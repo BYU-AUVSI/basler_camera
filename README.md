@@ -4,6 +4,8 @@ Basler camera interface with ROS
 ## Why we made this fork ##
 We want to be able to control the framerate at which we capture images. To do this, we need to set the `AcquisitionFrameRate` and the `AcquisitionFrameRateEnable` parameters in the camera. `AcquisitionFrameRateEnable` is a boolean parameter, which the default version of this repo doesn't support. We've added support for boolean parameters to this fork.
 
+We also wanted support for dynamic reconfigure of camera parameters. So we merged a branch from someone who forked the original repo into this fork that does that.
+
 ## Getting Started ##
 These are the steps needed to publish Basler camera images to ROS:
 
