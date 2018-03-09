@@ -184,7 +184,7 @@ void handle_parameters(CInstantCamera& camera)
       private_handle.getParam(*k, v);
       if(param_name == "basler_params")
       {
-          ROS_WARN("Using legacy basler_params value.");
+          ROS_INFO("Using legacy basler_params value.");
           handle_basler_parameters(camera);
           break;
       }
@@ -252,12 +252,6 @@ int main(int argc, char* argv[])
 {
   ros::init(argc, argv, "basler_camera");
   ros::NodeHandle nh("~");
-
-  if(!nh.hasParam("frame_rate"))
-  {
-      ROS_ERROR("frame_rate param has been removed. Please use AcquisitionFrameRate and remember to set AcquisitionFrameRateEnable=True");
-      nh.deleteParam("frame_rate");
-  }
 
   string camera_info_url;
   if(!nh.getParam("camera_info_url", camera_info_url))
