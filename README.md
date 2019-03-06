@@ -1,5 +1,3 @@
-## test 2 ##
-
 Basler camera interface with ROS
 ========================
 
